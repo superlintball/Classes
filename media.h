@@ -8,11 +8,12 @@ using namespace std;
 class Media
 {
 	public:
-		char getTitle[80];
-		int getYear;
-		int getType;
-	private:
-		char title[80];
+		Media(char *newTitle, int newYear, int newType);
+		char* getTitle();
+		int getYear();
+		int getType();
+	protected:
+		char *title;
 		int year;
 		int type;
-}
+};
