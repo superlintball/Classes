@@ -1,4 +1,6 @@
 // header file to build basic media
+#ifndef MEDIA_H
+#define MEDIA_H
 
 #include <iostream>
 #include <cstring>
@@ -8,7 +10,6 @@ using namespace std;
 class Media
 {
 	public:
-		Media(char *newTitle, int newYear, int newType);
 		char* getTitle();
 		int getYear();
 		int getType();
@@ -17,3 +18,5 @@ class Media
 		int year;
 		int type;
 };
+
+#endif
