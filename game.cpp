@@ -24,3 +24,12 @@ char* Game::getPublisher()
 {
 	return publisher;
 }
+
+Game::~Game()
+{
+	delete &title;
+	delete &year;
+	delete &type;
+	delete &rating;
+	delete &publisher;
+}

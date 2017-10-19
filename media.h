@@ -13,6 +13,9 @@ class Media
 		char* getTitle();
 		int getYear();
 		int getType();
+		virtual float getRating();
+		virtual float getDuration();
+		virtual char *getPublisher();
 	protected:
 		char *title;
 		int year;

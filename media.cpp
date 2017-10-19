@@ -20,3 +20,7 @@ int Media::getType()
 {
 	return type;
 }
+
+float Media::getDuration() {return NULL;}
+float Media::getRating() {return NULL;}
+char *Media::getPublisher() {return NULL;}

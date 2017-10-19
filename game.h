@@ -9,8 +9,9 @@ class Game : public Media
 {
 	public:
 		Game(char *newTitle, int newYear, int newType, float newRating, char *newPublisher);
-		float getRating();
-		char *getPublisher();
+		virtual float getRating();
+		virtual char *getPublisher();
+		~Game();
 	protected:
 		float rating;
 		char *publisher;
