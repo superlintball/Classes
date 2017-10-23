@@ -1,4 +1,4 @@
-// cpp file to go with movie header
+//cpp file to go with movie header
 
 #include <iostream>
 #include <cstring>
@@ -6,25 +6,29 @@
 
 using namespace std;
 
-Movie::Movie(char *newTitle, int newYear, int newType, float newRating, float newDuration)
+//movie constructor
+Movie::Movie(char *newTitle, int newYear, float newRating, float newDuration)
 {
 	title = newTitle;
 	year = newYear;
-	type = newType;
 	rating = newRating;
 	duration = newDuration;
+	type = 2;
 }
 
+//returns movie's rating
 float Movie::getRating()
 {
 	return rating;
 }
 
+//returns movie's length
 float Movie::getDuration()
 {
 	return duration;
 }
 
+//deconstructor
 Movie::~Movie()
 {
 	delete &title;

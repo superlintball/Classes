@@ -1,18 +1,19 @@
-// header file for music child class
+//header file for music child class
 
 #include <iostream>
 #include <cstring>
 #include "media.h"
 using namespace std;
 
+//music is a child of media
 class Music : public Media
 {
-	public:
-		Music(char *newTitle, int newYear, int newType, float newDuration, char *newPublisher);
+	public: //publicly available functions/variables
+		Music(char *newTitle, int newYear, float newDuration, char *newPublisher);
 		virtual float getDuration();
 		virtual char *getPublisher();
 		~Music();
-	protected:
+	protected: //data-storing variables
 		float duration;
 		char *publisher;
 };

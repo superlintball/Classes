@@ -1,4 +1,4 @@
-// cpp file to go with music header
+//cpp file to go with music header
 
 #include <iostream>
 #include <cstring>
@@ -6,25 +6,29 @@
 
 using namespace std;
 
-Music::Music(char *newTitle, int newYear, int newType, float newDuration, char *newPublisher)
+//music constructor
+Music::Music(char *newTitle, int newYear, float newDuration, char *newPublisher)
 {
 	title = newTitle;
 	year = newYear;
-	type = newType;
 	duration = newDuration;
 	publisher = newPublisher;
+	type = 1;
 }
 
+//return music's length
 float Music::getDuration()
 {
 	return duration;
 }
 
+//return music's publisher
 char* Music::getPublisher()
 {
 	return publisher;
 }
 
+//deconstructor
 Music::~Music()
 {
 	delete &title;

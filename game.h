@@ -1,18 +1,19 @@
-// header file for video games child class
+//header file for video games child class
 
 #include <iostream>
 #include <cstring>
 #include "media.h"
 using namespace std;
 
+//game is a child of media
 class Game : public Media
 {
-	public:
-		Game(char *newTitle, int newYear, int newType, float newRating, char *newPublisher);
+	public: //publicly available variables/functions
+		Game(char *newTitle, int newYear, float newRating, char *newPublisher);
 		virtual float getRating();
 		virtual char *getPublisher();
 		~Game();
-	protected:
+	protected: //actual variables unique to game
 		float rating;
 		char *publisher;
 };

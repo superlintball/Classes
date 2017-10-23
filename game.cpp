@@ -1,4 +1,4 @@
-// cpp file to go with video game header
+//cpp file to go with video game header
 
 #include <iostream>
 #include <cstring>
@@ -6,25 +6,29 @@
 
 using namespace std;
 
-Game::Game(char *newTitle, int newYear, int newType, float newRating, char *newPublisher)
+//game constructor
+Game::Game(char *newTitle, int newYear, float newRating, char *newPublisher)
 {
 	title = newTitle;
 	year = newYear;
-	type = newType;
 	rating = newRating;
 	publisher = newPublisher;
+	type = 0;
 }
 
+//return rating
 float Game::getRating()
 {
 	return rating;
 }
 
+//return publisher
 char* Game::getPublisher()
 {
 	return publisher;
 }
 
+//deconstructor
 Game::~Game()
 {
 	delete &title;
