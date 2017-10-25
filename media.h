@@ -17,7 +17,7 @@ class Media
 		int getYear();
 		int getType();
 		virtual float getRating();
-		virtual float getDuration();
+		virtual char *getDuration();
 		virtual char *getPublisher();
 	protected: //actual data-storing variables
 		char *title;

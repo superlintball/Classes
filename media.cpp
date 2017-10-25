@@ -25,6 +25,6 @@ int Media::getType()
 }
 
 //automatically return null if the user asks for a variable which that specific child doesn't possess
-float Media::getDuration() {return NULL;}
+char *Media::getDuration() {return NULL;}
 float Media::getRating() {return NULL;}
 char *Media::getPublisher() {return NULL;}

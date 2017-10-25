@@ -7,7 +7,7 @@
 using namespace std;
 
 //movie constructor
-Movie::Movie(char *newTitle, int newYear, float newRating, float newDuration)
+Movie::Movie(char *newTitle, int newYear, float newRating, char *newDuration)
 {
 	title = newTitle;
 	year = newYear;
@@ -23,7 +23,7 @@ float Movie::getRating()
 }
 
 //returns movie's length
-float Movie::getDuration()
+char *Movie::getDuration()
 {
 	return duration;
 }

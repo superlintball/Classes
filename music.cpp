@@ -7,7 +7,7 @@
 using namespace std;
 
 //music constructor
-Music::Music(char *newTitle, int newYear, float newDuration, char *newPublisher)
+Music::Music(char *newTitle, int newYear, char *newDuration, char *newPublisher)
 {
 	title = newTitle;
 	year = newYear;
@@ -17,7 +17,7 @@ Music::Music(char *newTitle, int newYear, float newDuration, char *newPublisher)
 }
 
 //return music's length
-float Music::getDuration()
+char *Music::getDuration()
 {
 	return duration;
 }

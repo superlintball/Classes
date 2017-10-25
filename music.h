@@ -9,11 +9,11 @@ using namespace std;
 class Music : public Media
 {
 	public: //publicly available functions/variables
-		Music(char *newTitle, int newYear, float newDuration, char *newPublisher);
-		virtual float getDuration();
+		Music(char *newTitle, int newYear, char *newDuration, char *newPublisher);
+		virtual char *getDuration();
 		virtual char *getPublisher();
 		~Music();
 	protected: //data-storing variables
-		float duration;
+		char *duration;
 		char *publisher;
 };

@@ -10,11 +10,11 @@ using namespace std;
 class Movie : public Media
 {
 	public: //publicly available functions/variables
-		Movie(char *newTitle, int newYear, float newRating, float newDuration);
+		Movie(char *newTitle, int newYear, float newRating, char *newDuration);
 		virtual float getRating();
-		virtual float getDuration();
+		virtual char *getDuration();
 		~Movie();
 	protected: //variables specific to movie
 		float rating;
-		float duration;
+		char *duration;
 };
