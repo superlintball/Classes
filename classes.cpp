@@ -51,7 +51,7 @@ int main()
 				cout << "There was an error in adding your media";
 			}
 		}
-		
+
 		//if the user wants to search media, run the search function
 		else if(strcmp(input, "SEARCH") == 0 || strcmp(input, "search") == 0)
 		{
@@ -114,7 +114,7 @@ bool addMedia()
 	char input[20];
 	cin.get(input, 20);
 	cin.get();
-	
+
 	//if they choose game
 	if(strcmp(input, "GAME") == 0 || strcmp(input, "game") == 0)
 	{
@@ -143,7 +143,7 @@ bool addMedia()
 		duration = new char[20];
 		cin.get(duration, 20);
 		cin.get();
-		
+
 		//ask the user for the game's publisher
 		cout << "Who's the publisher?" << endl;
 		char *publisher;
@@ -172,7 +172,7 @@ bool addMedia()
 		database.push_back(new Movie(title, year, rating, duration));
 		return true;
 	}
-	
+
 	//if the program has not returned yet, assume it couldn't understand the input
 	delete title;
 	return false;
@@ -199,7 +199,7 @@ bool searchMedia()
 		cin.get(title, 100);
 		cin.get();
 		cout << endl;
-		
+
 		vector<Media*>::iterator it;
 		for(it = database.begin(); it != database.end(); it++)
 		{
@@ -250,7 +250,7 @@ bool searchMedia()
 		cin >> year;
 		cin.get();
 		cout << endl;
-		
+
 		vector<Media*>::iterator it;
 		for(it = database.begin(); it != database.end(); it++)
 		{
@@ -329,7 +329,7 @@ bool deleteMedia()
 		cin.get(title, 100);
 		cin.get();
 		cout << endl;
-		
+
 		vector<Media*>::iterator it;
 		for(it = database.begin(); it != database.end(); it++)
 		{
@@ -339,9 +339,10 @@ bool deleteMedia()
 			{
 				//record the fact that a match was a found
 				matchFound = true;
-				
+
 				//print based on type of media
-				if(database[position]->getType() == GAME)
+				int type = database[position]->getType();
+				if(type == GAME)
 				{
 					cout << "Found a Game" << endl;
 					cout << "Title: " << database[position]->getTitle() << endl;
@@ -350,7 +351,7 @@ bool deleteMedia()
 					cout << "Publisher: " << database[position]->getPublisher() << endl;
 					cout << endl;
 				}
-				else if(database[position]->getType() == MUSIC)
+				else if(type == MUSIC)
 				{
 					cout << "Found a Music" << endl;
 					cout << "Title: " << database[position]->getTitle() << endl;
@@ -359,7 +360,7 @@ bool deleteMedia()
 					cout << "Publisher: " << database[position]->getPublisher() << endl;
 					cout << endl;
 				}
-				else if(database[position]->getType() == MOVIE)
+				else if(type == MOVIE)
 				{
 					cout << "Found a Movie" << endl;
 					cout << "Title: " << database[position]->getTitle() << endl;
@@ -368,15 +369,18 @@ bool deleteMedia()
 					cout << "Duration: " << database[position]->getDuration() << endl;
 					cout << endl;
 				}
-				
+
 				//ask the user if they want to delete it
+				cout << "Delete this object?" << endl;
 				char yesNo[10];
 				cin.get(yesNo, 10);
 				cin.get();
-				if(strcmp(yesNo, "yes") != 0 || strcmp(yesNo, "YES") != 0 || strcmp(yesNo, "y") != 0 || strcmp(yesNo, "Y") != 0)
+				cout << endl;
+				if(strcmp(yesNo, "yes") == 0 || strcmp(yesNo, "YES") == 0 || strcmp(yesNo, "y") == 0 || strcmp(yesNo, "Y") == 0)
 				{
 					delete database[position];
 					database.erase(database.begin()+position);
+					break;
 				}
 			}
 		}
@@ -389,7 +393,7 @@ bool deleteMedia()
 		cin >> year;
 		cin.get();
 		cout << endl;
-		
+
 		vector<Media*>::iterator it;
 		for(it = database.begin(); it != database.end(); it++)
 		{
@@ -401,7 +405,8 @@ bool deleteMedia()
 				matchFound = true;
 
 				//print based on type of media
-				if(database[position]->getType() == GAME)
+				int type = database[position]->getType();
+				if(type == GAME)
 				{
 					cout << "Found a Game" << endl;
 					cout << "Title: " << database[position]->getTitle() << endl;
@@ -410,7 +415,7 @@ bool deleteMedia()
 					cout << "Publisher: " << database[position]->getPublisher() << endl;
 					cout << endl;
 				}
-				else if(database[position]->getType() == MUSIC)
+				else if(type == MUSIC)
 				{
 					cout << "Found a Music" << endl;
 					cout << "Title: " << database[position]->getTitle() << endl;
@@ -419,7 +424,7 @@ bool deleteMedia()
 					cout << "Publisher: " << database[position]->getPublisher() << endl;
 					cout << endl;
 				}
-				else if(database[position]->getType() == MOVIE)
+				else if(type == MOVIE)
 				{
 					cout << "Found a Movie" << endl;
 					cout << "Title: " << database[position]->getTitle() << endl;
@@ -428,15 +433,18 @@ bool deleteMedia()
 					cout << "Duration: " << database[position]->getDuration() << endl;
 					cout << endl;
 				}
-				
+
 				//ask the user if they want to delete it
+				cout << "Delete this object?" << endl;
 				char yesNo[10];
 				cin.get(yesNo, 10);
 				cin.get();
-				if(strcmp(yesNo, "yes") != 0 || strcmp(yesNo, "YES") != 0 || strcmp(yesNo, "y") != 0 || strcmp(yesNo, "Y") != 0)
+				cout << endl;
+				if(strcmp(yesNo, "yes") == 0 || strcmp(yesNo, "YES") == 0 || strcmp(yesNo, "y") == 0 || strcmp(yesNo, "Y") == 0)
 				{
 					delete database[position];
 					database.erase(database.begin()+position);
+					break;
 				}
 			}
 		}
